@@ -4,11 +4,9 @@
 library(ggsoccer)
 library(gganimate)
 library(ggplot2)
-library(tibble)
 library(av)
 library(dplyr)
 library(lubridate)
-library(scales)
 
 # Read in data
 # Tracking Data
