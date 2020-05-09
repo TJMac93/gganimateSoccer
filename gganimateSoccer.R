@@ -32,10 +32,6 @@ subs <- oneNil[1,] == "NaN"                      # Returns boolean for if their 
 oneNil <- oneNil[, !subs, drop = FALSE]          # in oneNil, for every row, if subs is FALSE, remove
 
 
-# change time to get clock - will be used in animation
-oneNil$clock <- floor(oneNil$Time..s.)
-oneNil$clock <- seconds_to_period(oneNil$clock)
-oneNil$clock <- paste0(as.character(minute(oneNil$clock)), ":", as.character(second(oneNil$clock)))
 
 
 
@@ -53,6 +49,15 @@ oneNilEvent <- subset(events, Start.Time..s. > 84 & End.Time..s. < 93)
 
 # Metrica values are between 0 and 1. We need between 0 and 100. Multiply co-ordinate values by 100 to get correct scale
 oneNil[,4:49] <- oneNil[,4:49] * 100
+
+
+
+# change time to get clock - will be used in animation
+oneNil$clock <- floor(oneNil$Time..s.)
+oneNil$clock <- seconds_to_period(oneNil$clock)
+oneNil$clock <- paste0(as.character(minute(oneNil$clock)), ":", as.character(second(oneNil$clock)))
+
+
 
 # We can see which players we need by looking at the event
 unique(oneNilEvent$From)
